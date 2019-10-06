@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="card mt-4">
+    <div class="card-header">
+      <h5 class="h6 my-3 text-center">投稿確認</h5>
+    </div>
+
+    <%= form_with(model: @feed, local: true, url:feeds_path) do |f| %>
+
+      <%= render 'shared/feed_error'%>
+
+      <div class="form-group text-center">
+        <div class="wrapper">
+          <div class="card-body mx-auto" id="img_field">
+            <%=image_tag(@feed.image.url, id:"uploaded_img") if @feed.image && @feed.image.url%>
+            <%=f.hidden_field :image_cache, id:"uploaded_img"%>
+          </div>
+
+          <% if @feed.content.present? %>
+            <div class="card-body">
+              <%=f.label :content, class:"sr-only"%>
+              <%=f.text_area :content, class:"form-control text-box", placeholder: "キャプションを書く"%>
+            </div>
+          <%end%>
+          
+          <div>
+            <%#=f.hidden_field :user_id, value: current_user.id %>
+          </div>
+        
+          <div class="mb-4">
+            <%= f.submit button_text, class: "btn btn btn-outline-primary mt-4 mr-2"%>
+            <%= f.submit "戻る", name: "back", class: "btn btn-outline-light mt-4 ml-2"%>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>

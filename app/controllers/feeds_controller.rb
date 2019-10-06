@@ -6,16 +6,25 @@ before_action :set_feed, only: [:edit, :update, :show, :destroy]
   end
  
   def new
-    @feed = Feed.new
+    if params[:back]
+      byebug
+      @feed = Feed.new(feed_params)
+    else
+      @feed = Feed.new
+    end
   end
  
   def create
     @feed = Feed.new(feed_params)
-    if @feed.save
-      redirect_to feeds_path
-      flash[:notice] = "フィードが投稿されました"
-    else
+    if params[:back]
       render :new
+    else
+      if @feed.save
+        redirect_to feeds_path
+        flash[:notice] = "フィードが投稿されました"
+      else
+        render :new
+      end
     end
   end
  
@@ -31,10 +40,15 @@ before_action :set_feed, only: [:edit, :update, :show, :destroy]
       render :edit
     end
   end
+
+  def confirm
+    @feed = Feed.new(feed_params)
+    render :new if @feed.invalid?
+  end
  
   def show
   end
- 
+
   def destroy
     @feed.destroy
     redirect_to feeds_path
@@ -48,7 +62,7 @@ before_action :set_feed, only: [:edit, :update, :show, :destroy]
   end
  
   def feed_params
-    params.require(:feed).permit(:content, :image)
+    params.require(:feed).permit(:content, :image, :image_cache)
   end
   
 end

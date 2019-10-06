@@ -1,6 +1,6 @@
-<%= form_with(model: feed, local: :ture) do |f|%>
- 
   <%= render 'shared/feed_error'%>
+ 
+  <%= form_with(model: feed, local: :ture, url: new_or_edit) do |f|%>
  
   <div class="form-group text-center">
     <div class="wrapper">
