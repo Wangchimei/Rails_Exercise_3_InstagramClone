@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     end
   end
   
-  root to: 'feeds#index'
+  resources :users, only: [:new, :create, :edit, :update, :show]
+  
+  root to: 'users#welcome'
 end

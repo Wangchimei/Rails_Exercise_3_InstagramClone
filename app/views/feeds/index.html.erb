@@ -4,12 +4,10 @@
       <div class="card-header">
         <div class="d-flex justify-content-between align-items-center">
           <div class="d-flex justify-content-start align-items-center">
-            <a href=""><img class="img-fluid rounded-circle" src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/4.jpg" alt="User"></a>
+            <%= avatar(feed.user, "rounded-circle")%>
             <div class="ml-2">
-              <p class="h6 mb-0 ml-0">Benjamin Robinson</p>
-              <button type="button" class="btn btn-default px-0 py-0">
-                <span class="far fa-clock text-muted h7 mt-0 ml-0" aria-hidden="true"> <%= distance_of_time_in_words(feed.created_at, Time.now)%>前</span>
-              </button>
+              <p class="h6 mb-0 ml-0"><%=feed.user.name %></p>
+              <i class="far fa-clock text-muted h7 mt-0 ml-0" aria-hidden="true"> <%= distance_of_time_in_words(feed.created_at, Time.now)%>前</i>
             </div>
           </div>
           <div class="dropdown">

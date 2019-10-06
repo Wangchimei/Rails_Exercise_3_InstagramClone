@@ -5,7 +5,7 @@
   <div class="form-group text-center">
     <div class="wrapper">
       <div class="card-body mx-auto">
-        <div id="img_field" onClick="$('#file').click()" >
+        <div id="img_field" class="py-4" onClick="$('#file').click()" >
           <% if @feed.image && @feed.image.url %>
             <%= image_tag(@feed.image.url, id:"uploaded_img")%>
           <% else %>
@@ -21,7 +21,8 @@
         <%=f.text_area :content, class:"form-control text-box", placeholder: "キャプションを書く"%>
       </div>
       <div>
-        <%#=f.hidden_field :user_id, value: current_user.id %>
+        <%=f.text_field :user_id, value: "2" %>
+        <%# current_user.id %>
       </div>
       <div class="mb-4">
         <%= f.submit button_text, class: "btn btn btn-outline-primary mt-4 mr-2"%>

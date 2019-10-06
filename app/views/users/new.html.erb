@@ -1,0 +1,37 @@
+<div class="form-signin text-center">
+
+  <%#= render 'shared/user_error' %>
+
+  <%= form_with(model:@user, local: true) do |f| %>
+    <div>
+      <%= f.hidden_field :avatar%>
+    </div>
+    <div class="name">
+      <%= f.label :name, class: "sr-only"%>
+      <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "名前" %>
+    </div>
+    <div class="email">
+      <%= f.label :email, class: "sr-only"%>
+      <%= f.email_field :email, class: "form-control", placeholder: "メールアドレス"%>
+    </div>
+    <div class="password">
+      <%= f.label :password, class: "sr-only"%>
+      <%= f.password_field :password, class: "form-control", placeholder: "パスワード"%>
+    </div>
+    <div class="password">
+      <%= f.label :password_confirmation, class: "sr-only"%>
+      <%= f.password_field :password_confirmation, class: "form-control", placeholder: "パスワード再入力"%>
+       <small class="fas fa-exclamation-triangle">パスワードの長さは最低6文字です。</small>
+    </div>
+    <div>
+      <%= f.submit "登録", class: "mt-4 mb-3 text-muted btn btn-lg btn-light btn-block" %>
+    </div>
+  <%end%>
+
+  <hr>
+
+  <div>
+    <p class="h6 sign-in-link">または</p>
+    <%#= link_to "ログインする", new_session_path, class: "mt-2 mb-2 text-muted btn btn-md btn-light btn-block" %>
+  </div>
+</div>

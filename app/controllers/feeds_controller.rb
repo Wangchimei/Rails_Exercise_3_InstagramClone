@@ -62,7 +62,7 @@ before_action :set_feed, only: [:edit, :update, :show, :destroy]
   end
  
   def feed_params
-    params.require(:feed).permit(:content, :image, :image_cache)
+    params.require(:feed).permit(:content, :image, :image_cache, :user_id)
   end
   
 end
