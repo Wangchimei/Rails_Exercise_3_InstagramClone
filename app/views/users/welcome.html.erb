@@ -1,13 +1,13 @@
 <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
   <main class="cover-container">
-    <div class="container">
-      <%= image_tag "logo_white_transparent.png", class:"cover-image mb-3"%>
-
-      <div class="text-center mt-4">
-        <%= link_to "新規登録", new_user_path, class:"btn btn-outline-info btn-lg btn-block mr-3" %>
-        <%#= link_to "ログイン", new_session_path, class:"btn btn-outline-primary ml-3" %>
-      </div>
+    <div>
+      <p><%= image_tag "logo_main.png", class:"cover-logo"%></p>
+      <p><%= image_tag "logo_wording.png", class:"brand-name"%></p>
+    </div>
+    <div class="text-center mt-4">
+      <%= link_to "新規登録", new_user_path, class:"btn btn-outline-info btn-lg btn-block mr-3" %>
+      <%#= link_to "ログイン", new_session_path, class:"btn btn-outline-primary ml-3" %>
     </div>
   </main>
-
 </div>
+
