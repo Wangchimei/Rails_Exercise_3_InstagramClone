@@ -1,4 +1,4 @@
-<div class="form-signin text-center mx-auto">
+<div class="form-signin text-center mx-auto my-auto">
 
   <%#= render 'shared/user_error' %>
 
@@ -26,17 +26,17 @@
     <div class="password">
       <%= f.label :password_confirmation, class: "sr-only"%>
       <%= f.password_field :password_confirmation, class: "form-control signin-box", placeholder: "パスワード再入力"%>
-      <small class="text-dark fas fa-exclamation-triangle"> パスワードの長さは最低6文字です。</small>
+      <small class="text-muted fas fa-exclamation-triangle"> パスワードの長さは最低6文字です。</small>
     </div>
     <div>
-      <%= f.submit "登録", class: "mt-4 mb-3 text-muted btn btn-lg btn-light btn-block" %>
+      <%= f.submit "登録", class: "mt-4 mb-3 text-muted btn btn-light btn-block" %>
     </div>
   <%end%>
 
   <hr>
 
   <div>
-    <p class="h6 sign-in-link text-dark">または</p>
-    <%#= link_to "ログインする", new_session_path, class: "mt-2 mb-2 text-muted btn btn-md btn-light btn-block" %>
+    <p class="h7 sign-in-link text-muted">アカウントをお持ちですか？ </p>
+    <%= link_to "ログイン", new_session_path, class: "mt-2 mb-2 text-muted btn btn-light btn-block" %>
   </div>
 </div>

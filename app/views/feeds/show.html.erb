@@ -30,10 +30,12 @@
         <button type="button" class="btn btn-default px-0">
           <span class="far fa-comments h6" aria-hidden="true"> 12件</span>
         </button>
-        <div>
-          <%= link_to '', edit_feed_path(@feed), class:"far fa-edit h5"%>
-          <%= link_to '', feed_path(@feed), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "far fa-trash-alt mr-1 ml-3 h5" %>
-        </div>
+        <% if current_user.id == @feed.user_id %>
+          <div>
+            <%= link_to '', edit_feed_path(@feed), class:"far fa-edit h5"%>
+            <%= link_to '', feed_path(@feed), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "far fa-trash-alt mr-1 ml-3 h5" %>
+          </div>
+        <%end%>
       </div>
     </div>
   </div>

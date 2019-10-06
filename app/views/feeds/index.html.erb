@@ -10,15 +10,17 @@
               <i class="far fa-clock text-muted h7 mt-0 ml-0" aria-hidden="true"> <%= distance_of_time_in_words(feed.created_at, Time.now)%>前</i>
             </div>
           </div>
-          <div class="dropdown">
-            <button class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-ellipsis-h"></i>
-            </button>
-            <div class="dropdown-menu dropdown-menu-right">
-              <%= link_to '編集', edit_feed_path(feed), class: "dropdown-item" %>
-              <%= link_to '削除', feed_path(feed), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "dropdown-item" %>
+          <% if current_user.id == feed.user_id %>
+            <div class="dropdown">
+              <button class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-ellipsis-h"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <%= link_to '編集', edit_feed_path(feed), class: "dropdown-item" %>
+                <%= link_to '削除', feed_path(feed), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "dropdown-item" %>
+              </div>
             </div>
-          </div>
+          <%end%>
         </div>
       </div>
       <div class="card-body">
