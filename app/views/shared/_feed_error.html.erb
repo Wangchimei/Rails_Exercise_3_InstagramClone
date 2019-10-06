@@ -1,0 +1,14 @@
+<div class="error-container">
+  <% if @feed.errors.any? %>
+    <div class="alert alert-info alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="text-left">
+        <% @feed.errors.full_messages.each do |message| %>
+          <p><%=message%></p>
+        <%end%>
+        </div>
+    </div>
+  <%end%>
+</div>

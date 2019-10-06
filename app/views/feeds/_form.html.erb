@@ -1,0 +1,32 @@
+<%= form_with(model: feed, local: :ture) do |f|%>
+ 
+  <%= render 'shared/feed_error'%>
+ 
+  <div class="form-group text-center">
+    <div class="wrapper">
+      <div class="card-body mx-auto">
+        <div id="img_field" onClick="$('#file').click()" >
+          <% if @feed.image && @feed.image.url %>
+            <%= image_tag(@feed.image.url, id:"uploaded_img")%>
+          <% else %>
+            <i class="far fa-image"></i><i class="fas fa-plus plus"></i>
+          <% end %>
+        </div>
+        <div>
+          <%=f.file_field :image, class:"file-field", style: "display:none;", id: "file"%>
+          <%=f.hidden_field :image_cache, class:"card-image"%>
+        </div>
+      <div class="card-body">
+        <%=f.label :content, class:"sr-only"%>
+        <%=f.text_area :content, class:"form-control", placeholder: "キャプションを書く"%>
+      </div>
+      <div>
+        <%#=f.hidden_field :user_id, value: current_user.id %>
+      </div>
+      <div class="mb-4">
+        <%= f.submit button_text, class: "btn btn btn-outline-primary mt-4 mr-2"%>
+        <%= link_to "戻る", feeds_path, class: "btn btn-outline-light mt-4 ml-2"%>
+      </div>
+    </div>
+  </div>
+<%end%>

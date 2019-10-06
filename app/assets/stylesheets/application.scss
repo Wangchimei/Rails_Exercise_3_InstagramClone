@@ -1,3 +1,101 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+// background: linear-gradient(to bottom right, #F0EE05, #FFEA00 20%, #EE2FA7 85%) !important;
+
+// Button custom
+.btn-outline-light {
+  color: #aaa;
+  border-color: #aaa;
+}
+
+.btn-outline-light:hover {
+  color: #fff;
+  border-color: #aaa;
+  background-color: #aaa;
+}
+
+// Card custom
+.card {
+  max-width: 800px !important;
+  margin: 0 auto;
+}
+.card-header {
+  background-color: #fff !important;
+  padding: 10px !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+.card-footer {
+  background-color: #fff !important;
+  padding: 5px 15px !important;
+}
+
+.card-image {
+  width: 100%;
+}
+
+// Image field Custom
+
+#img_field {
+  position: relative;
+  margin: 0 auto;
+  padding: 5px 5px;
+  color: #dfdfdf;
+  cursor: pointer;
+  max-width: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+}
+
+#img_field i {
+  font-size: 100px;
+  color: #aaa;
+  line-height: 250px;
+  transition: 0.3s ease-out;
+}
+
+#img_field i.plus {
+  position: absolute;
+  display: none;
+  font-size: 50px;
+  top: -90px;
+  right: 15px;
+}
+
+#img_field:hover {
+  background-color: #aaa;
+  transition: 0.3s ease-out;
+  opacity: 0.5;
+}
+
+#img_field:hover i {
+  transition: 0.3s ease-out;
+  display: block;
+  color: #fff;
+}
+
+#uploaded_img {
+  max-width: 100%;
+}
+
+.h6 {
+  font-size: 1.1rem !important;
+}
+
+.h7 {
+  font-size: .8rem;
+}
+
+// Form custom
+.form-control {
+  border-radius: 0;
+}
