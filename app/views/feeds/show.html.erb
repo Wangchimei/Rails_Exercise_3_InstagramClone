@@ -1,1 +1,41 @@
-<h4 class="h4 my-4 text-center">Show</h4>
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-start align-items-center">
+          <%= link_to '', feeds_path, class: "fas fa-chevron-left mx-3" %>
+          <a href=""><img class="img-fluid rounded-circle" src="http://www.themashabrand.com/templates/bootsnipp/post/assets/img/users/4.jpg" alt="User"></a>
+          <div class="ml-2">
+            <p class="h6 mb-0 ml-0">Benjamin Robinson</p>
+            <button type="button" class="btn btn-default px-0 py-0">
+              <span class="far fa-clock text-muted h7 mt-0 ml-0" aria-hidden="true"> <%= distance_of_time_in_words(@feed.created_at, Time.now)%>前</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div>
+        <%= image_tag @feed.image.url, class:"card-image"%>
+      </div>
+    </div>
+    <% if @feed.content.present? %>
+      <div class="card-body">
+        <div class="card-text ml-2 py-1">
+          <%= @feed.content%>
+        </div>
+      </div>
+    <%end%>
+    <div class="card-footer">
+      <div class="d-flex justify-content-between align-items-center">
+        <button type="button" class="btn btn-default px-0">
+          <span class="far fa-comments h6" aria-hidden="true"> 12件</span>
+        </button>
+        <div>
+          <%= link_to '', edit_feed_path(@feed), class:"far fa-edit h5"%>
+          <%= link_to '', feed_path(@feed), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "far fa-trash-alt mr-1 ml-3 h5" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
