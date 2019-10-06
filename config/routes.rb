@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :edit, :update, :show]
   resources :sessions, only: [:new, :create, :destroy]
   
-  root to: 'users#welcome'
+  root to: 'users#coverpage'
 end

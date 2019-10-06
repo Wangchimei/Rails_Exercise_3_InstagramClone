@@ -1,26 +1,32 @@
-<div class="form-signin text-center mx-auto my-auto">
+<div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <main class="cover-container text-center">
+    <div class="container">
 
-  <div class="mt-5 mb-5">
-    <p><%= image_tag "logo_main.png", class:"cover-logo"%></p>
-    <p><%= image_tag "logo_wording.png", class:"brand-name"%></p>
-  </div>
+      <div class="logo">
+        <p><%= image_tag "logo_main.png", class:"cover-logo"%></p>
+        <p><%= image_tag "logo_wording.png", class:"brand-name"%></p>
+      </div>
 
-  <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-    <div class="email">
-      <%=f.label :email, class: "sr-only"%>
-      <%=f.email_field :email, autofocus: true, class: "form-control signin-box", placeholder: "メールアドレス"%>
+      <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+        <div class="email">
+          <%=f.label :email, class: "sr-only"%>
+          <%=f.email_field :email, autofocus: true, class: "form-control signin-box", placeholder: "メールアドレス"%>
+        </div>
+        <div class="password">
+          <%=f.label :password, class: "sr-only"%>
+          <%=f.password_field :password, class: "form-control signin-box", placeholder: "パスワード"%>
+        </div>
+        <div>
+          <%=f.submit "ログイン", class: "mt-4 mb-3 text-muted btn btn-light btn-block"%>
+        </div>
+      <%end%>
+
+      <hr>
+
+      <div>
+        <p class="h7 text-dark text-muted">アカウントをお持ちでないですか？</p>
+        <%=link_to "登録する", new_user_path, class: "mt-2 mb-2 text-muted btn btn-light btn-block"%>
+      </div>
     </div>
-    <div class="password">
-      <%=f.label :password, class: "sr-only"%>
-      <%=f.password_field :password, class: "form-control signin-box", placeholder: "パスワード"%>
-    </div>
-    <div>
-      <%=f.submit "ログイン", class: "mt-4 mb-3 text-muted btn btn-light btn-block"%>
-    </div>
-  <%end%>
-  <hr>
-  <div>
-    <p class="h7 text-dark text-muted">アカウントをお持ちでないですか？</p>
-    <%=link_to "登録する", new_user_path, class: "mt-2 mb-2 text-muted btn btn-light btn-block"%>
-  </div>
+  </main>
 </div>

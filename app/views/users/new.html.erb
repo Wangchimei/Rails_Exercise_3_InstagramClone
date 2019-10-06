@@ -1,42 +1,46 @@
-<div class="form-signin text-center mx-auto my-auto">
+<div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <main class="cover-container text-center">
+    <div class="container">
+    
+      <%#= render 'shared/user_error' %>
 
-  <%#= render 'shared/user_error' %>
+      <div class="logo">
+        <p><%= image_tag "logo_main.png", class:"cover-logo"%></p>
+        <p><%= image_tag "logo_wording.png", class:"brand-name"%></p>
+      </div>
 
-  <div class="mt-5 mb-5">
-    <p><%= image_tag "logo_main.png", class:"cover-logo"%></p>
-    <p><%= image_tag "logo_wording.png", class:"brand-name"%></p>
-  </div>
+      <%= form_with(model:@user, local: true) do |f| %>
+        <div>
+          <%= f.hidden_field :avatar%>
+        </div>
+        <div class="name">
+          <%= f.label :name, class: "sr-only"%>
+          <%= f.text_field :name, autofocus: true, class: "form-control signin-box", placeholder: "名前" %>
+        </div>
+        <div class="email">
+          <%= f.label :email, class: "sr-only"%>
+          <%= f.email_field :email, class: "form-control signin-box", placeholder: "メールアドレス"%>
+        </div>
+        <div class="password">
+          <%= f.label :password, class: "sr-only"%>
+          <%= f.password_field :password, class: "form-control signin-box", placeholder: "パスワード"%>
+        </div>
+        <div class="password">
+          <%= f.label :password_confirmation, class: "sr-only"%>
+          <%= f.password_field :password_confirmation, class: "form-control signin-box", placeholder: "パスワード再入力"%>
+          <small class="text-muted fas fa-exclamation-triangle"> パスワードの長さは最低6文字です。</small>
+        </div>
+        <div>
+          <%= f.submit "登録", class: "mt-4 mb-3 text-muted btn btn-light btn-block" %>
+        </div>
+      <%end%>
 
-  <%= form_with(model:@user, local: true) do |f| %>
-    <div>
-      <%= f.hidden_field :avatar%>
-    </div>
-    <div class="name">
-      <%= f.label :name, class: "sr-only"%>
-      <%= f.text_field :name, autofocus: true, class: "form-control signin-box", placeholder: "名前" %>
-    </div>
-    <div class="email">
-      <%= f.label :email, class: "sr-only"%>
-      <%= f.email_field :email, class: "form-control signin-box", placeholder: "メールアドレス"%>
-    </div>
-    <div class="password">
-      <%= f.label :password, class: "sr-only"%>
-      <%= f.password_field :password, class: "form-control signin-box", placeholder: "パスワード"%>
-    </div>
-    <div class="password">
-      <%= f.label :password_confirmation, class: "sr-only"%>
-      <%= f.password_field :password_confirmation, class: "form-control signin-box", placeholder: "パスワード再入力"%>
-      <small class="text-muted fas fa-exclamation-triangle"> パスワードの長さは最低6文字です。</small>
-    </div>
-    <div>
-      <%= f.submit "登録", class: "mt-4 mb-3 text-muted btn btn-light btn-block" %>
-    </div>
-  <%end%>
+      <hr>
 
-  <hr>
-
-  <div>
-    <p class="h7 sign-in-link text-muted">アカウントをお持ちですか？ </p>
-    <%= link_to "ログイン", new_session_path, class: "mt-2 mb-2 text-muted btn btn-light btn-block" %>
-  </div>
+      <div>
+        <p class="h7 sign-in-link text-muted">アカウントをお持ちですか？ </p>
+        <%= link_to "ログイン", new_session_path, class: "mt-2 mb-2 text-muted btn btn-light btn-block" %>
+      </div>
+    </div>
+  </main>
 </div>

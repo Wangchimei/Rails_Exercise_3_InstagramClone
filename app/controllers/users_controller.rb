@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :show]
+  layout 'coverpage', only: [:coverpage, :new, :create]
+
+  def coverpage; end
 
   def new
     @user = User.new
