@@ -2,6 +2,11 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+html,
+body {
+  background-color: #f0eeee;
+}
+
 // Button custom
 .btn-outline-light {
   color: #aaa;

@@ -7,6 +7,12 @@
         <p><%= image_tag "logo_wording.png", class:"brand-name"%></p>
       </div>
 
+      <% flash.each do |key, value| %>
+        <div class="alert alert-warning">
+        <%= content_tag(:div, value, class: "#{key}") %>
+        </div>
+      <% end %>
+
       <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
         <div class="email">
           <%=f.label :email, class: "sr-only"%>

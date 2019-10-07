@@ -31,6 +31,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    render layout: 'user'
   end
 
   private

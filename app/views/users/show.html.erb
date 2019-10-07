@@ -1,2 +1,75 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card mt-5">
+        <div class="card-body">
+          <div class="card-title ml-3 mt-2">
+            <div class="d-flex">
+              <div>
+                <%= avatar(@user, "profile-avatar") %>
+              </div>
+              <div class="ml-5 my-auto">
+                <p class="h5 mb-2 text-dark"><%= @user.name %></p>
+                <p class="h6-5 lead text-muted mb-3">投稿<%= @user.feeds.count%>件</P>
+                <%= link_to " 編集", edit_user_path, class: "btn btn-sm btn-outline-info fas fa-user-edit"%></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" id="nav-feed-tab" data-toggle="tab" href="#nav-feed" role="tab" aria-controls="nav-feed" aria-selected="true"><i class="far fa-images"></i> 投稿</a>
+              <a class="nav-item nav-link" id="nav-likes-tab" data-toggle="tab" href="#nav-likes" role="tab" aria-controls="nav-likes" aria-selected="false"><i class="far fa-heart"></i> お気に入り</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="far fa-user"></i> プロファイル</a>
+            </div>
+          </nav>
+          <div class="tab-content row ml-1" id="nav-tabContent">
+            <div class="tab-pane fade show active text-left" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
+              <% if @user.feeds.present? %>
+                <% @user.feeds.reverse_each do |feed| %>
+                  <% thumb = feed.image.url :thumb%>
+                  <%=image_tag(thumb ,class:"col-3 px-0 pt-1")%>
+                <% end %>
+              <% else %>
+                <%= content_tag(:div, "写真をシェアしよう！", class: "mt-4 ml-4 text-muted h6-5")%> 
+              <% end %>
+            </div>
+            <div class="tab-pane fade text-center" id="nav-likes" role="tabpanel" aria-labelledby="nav-likes-tab">
+              <%# if @user.feeds.present? %>
+                <%# @user.feeds.reverse_each do |feed| %>
+                  <%# thumb = feed.image.url :thumb%>
+                  <%#=image_tag(thumb ,class:"col-3 px-0 pt-1")%>
+                <%# end %>
+                <%# else %>
+                <%= content_tag(:div, "現在お気に入りに保存されたフィードはありません。", class: "mt-4 ml-4 text-muted h6-5")%> 
+              <%# end %>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <th scope="row text-right">名前</th>
+                    <td><%= @user.name %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">メールアドレス</th>
+                    <td><%= @user.email %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">投稿数</th>
+                    <td><%= @user.feeds.count%>件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">コメント数</th>
+                    <td><%#%= @user.feeds.count%>件</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

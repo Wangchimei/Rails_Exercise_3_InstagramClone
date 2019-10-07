@@ -1,0 +1,84 @@
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Cover page
+
+html,
+body {
+  height: 100%;
+  background-color: #f0eeee;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+}
+
+.cover-container {
+  margin: auto auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.logo {
+  margin-top: 0;
+  margin-bottom: 4rem;
+}
+.cover-button {
+  width: 345px;
+  margin: auto;
+}
+.cover-logo {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.brand-name {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.btn-outline-info {
+  color: #484848 !important;
+  border-color: #484848 !important;
+}
+
+.btn-outline-info:hover {
+  background-color: #484848 !important;
+  color: #F0EEEE !important;
+}
+
+.btn-light {
+  font-size: 1.1rem !important;
+}
+
+.btn-light:hover {
+  background-color: #484848 !important;
+  border-color: #484848 !important;
+  color: #F0EEEE !important;
+}
+
+//Signin form
+.form-signin {
+  width: 550px;
+}
+
+.signin-box {
+  margin-top: .5rem;
+  border-radius: 5px;
+}
+
+//Error display
+ul {
+  padding-left: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+li {
+  list-style-type: none;
+}
+
+li i {
+  padding-right: 0.5rem;
+}

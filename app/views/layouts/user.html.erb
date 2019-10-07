@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Octolink</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'users' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="site-wrapper">
+    
+      <%#=render "shared/application_nav"%>
+
+      <%# if flash[:notice] %>
+        <%# <div class="alert alert-info"> %>
+          <%#= flash[:notice] %>
+        <%# </div> %>
+      <%# end %>
+      
+      <%# flash.each do |key, value| %>
+        <%# <div class="alert alert-info"> %>
+        <%#= content_tag(:div, value, class: "#{key}") %>
+        <%# </div> %>
+      <%# end %>
+
+      <div class="main-content">
+        <%= yield %>
+      </div>
+
+    <%#=render "shared/footer"%>
+    
+  </body>
+</html>

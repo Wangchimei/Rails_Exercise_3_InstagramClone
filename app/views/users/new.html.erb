@@ -2,12 +2,12 @@
   <main class="cover-container text-center">
     <div class="container">
     
-      <%#= render 'shared/user_error' %>
-
       <div class="logo">
         <p><%= image_tag "logo_main.png", class:"cover-logo"%></p>
         <p><%= image_tag "logo_wording.png", class:"brand-name"%></p>
       </div>
+      
+      <%= render 'shared/user_error' %>
 
       <%= form_with(model:@user, local: true) do |f| %>
         <div>
@@ -28,7 +28,7 @@
         <div class="password">
           <%= f.label :password_confirmation, class: "sr-only"%>
           <%= f.password_field :password_confirmation, class: "form-control signin-box", placeholder: "パスワード再入力"%>
-          <small class="text-muted fas fa-exclamation-triangle"> パスワードの長さは最低6文字です。</small>
+          <small class="text-muted fas fa-exclamation-circle"> パスワードの長さは最低6文字です。</small>
         </div>
         <div>
           <%= f.submit "登録", class: "mt-4 mb-3 text-muted btn btn-light btn-block" %>

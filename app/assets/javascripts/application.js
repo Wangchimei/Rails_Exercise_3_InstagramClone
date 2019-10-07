@@ -18,7 +18,6 @@ $(function () {
     fileReader.onload = function () {
       // Data URIを取得
       var dataUri = this.result;
-      $("#uploaded_img").empty();
       $preview.empty();
       $preview.append($('<img>').attr({
         "src": dataUri,
@@ -26,6 +25,7 @@ $(function () {
         "class": "preview",
       }));
     };
+    $("#uploaded_img").empty();
     // ファイルをData URIとして読み込む
     fileReader.readAsDataURL(file);
   });
