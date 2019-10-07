@@ -12,7 +12,7 @@
 
   <body class="site-wrapper">
     
-      <%#=render "shared/application_nav"%>
+      <%= render "shared/navbar"%>
 
       <%# if flash[:notice] %>
         <%# <div class="alert alert-info"> %>
@@ -30,7 +30,7 @@
         <%= yield %>
       </div>
 
-    <%#=render "shared/footer"%>
+    <%=render "shared/footer"%>
     
   </body>
 </html>

@@ -18,12 +18,12 @@
           <% if @feed.content.present? %>
             <div class="card-body">
               <%=f.label :content, class:"sr-only"%>
-              <%=f.text_area :content, class:"form-control text-box", placeholder: "キャプションを書く"%>
+              <%=f.text_area :content, class:"form-control text-box"%>
             </div>
           <%end%>
           
           <div>
-            <%=f.hidden_field :user_id, value: "2"%>
+            <%=f.hidden_field :user_id%>
           </div>
         
           <div class="mb-4">

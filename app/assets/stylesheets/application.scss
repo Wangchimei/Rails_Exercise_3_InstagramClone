@@ -19,6 +19,27 @@ body {
   background-color: #aaa;
 }
 
+.btn-outline-info {
+  color: #484848 !important;
+  border-color: #484848 !important;
+}
+
+.btn-outline-info:hover {
+  background-color: #484848 !important;
+  color: #F0EEEE !important;
+}
+
+.btn-info {
+  color: #F0EEEE !important;
+  background-color: #5e5e5e !important;
+  border-color: #5e5e5e !important;
+}
+
+.btn-info:hover {
+  color: #F0EEEE !important;
+  background-color: #484848 !important;
+  border-color: #484848 !important;
+}
 // Card custom
 .card {
   max-width: 800px !important;
@@ -120,4 +141,20 @@ body {
   background-color: #F0EEEE;
   border-radius: 0;
 
+}
+
+
+//footer
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.footer {
+  background-color: #f5f5f5;
 }

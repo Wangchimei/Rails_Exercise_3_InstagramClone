@@ -2,8 +2,6 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// Cover page
-
 html,
 body {
   background-color: #f0eeee;
@@ -20,6 +18,7 @@ body {
 .h7 {
   font-size: .8rem;
 }
+
 // //Error display
 // ul {
 //   padding-left: 0.6rem;
@@ -55,6 +54,51 @@ body {
   color: #F0EEEE !important;
 }
 
+.btn-info {
+  color: #F0EEEE !important;
+  background-color: #5e5e5e !important;
+  border-color: #5e5e5e !important;
+}
+
+.btn-info:hover {
+  color: #F0EEEE !important;
+  background-color: #484848 !important;
+  border-color: #484848 !important;
+}
+
+
+// Image field Custom
+
+#avatar_field {
+  margin: 0.5rem auto;
+  margin-top: 2rem;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  color: #442c2c;
+  cursor: pointer;
+  background-position: center;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+  position: relative;
+}
+
+#avatar_field:hover {
+  background-color: #aaa;
+  transition: 0.3s ease-out;
+  opacity: 0.5;
+}
+
+#uploaded_img {
+  max-width: 100%;
+}
+
+.preview {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
 
 //footer
 .site-wrapper {
