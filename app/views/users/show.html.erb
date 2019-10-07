@@ -9,9 +9,9 @@
                 <%= avatar(@user, "profile-avatar") %>
               </div>
               <div class="ml-5 my-auto">
-                <p class="h5 mb-2 text-dark"><%= @user.name %></p>
+                <p class="h4 mb-2 text-dark"><%= @user.name %></p>
                 <p class="h6-5 lead text-muted mb-3">投稿<%= @user.feeds.count%>件</P>
-                <%= link_to " 編集", edit_user_path, class: "btn btn-sm btn-outline-info fas fa-user-edit"%></p>
+                <%= link_to " 編集", edit_user_path, class: "btn btn-outline-info fas fa-user-edit"%></p>
               </div>
             </div>
           </div>

@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    render layout: 'user'
   end
 
   def update

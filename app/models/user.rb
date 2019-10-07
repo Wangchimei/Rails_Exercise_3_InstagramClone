@@ -5,8 +5,14 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true,
                     length: { maximum: 255 },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-  validates :password_digest, presence: true, length: { minimum: 6 }
   before_validation { email.downcase! }
   
   has_secure_password
+
+  validates :password, presence: true, confirmation: true, length: {minimum: 6}, on: :create
+  validates :password, presence: true, confirmation: true, length: {minimum: 6}, on: :update, if: :password_digest_changed?
+  validates :password_confirmation, presence: true, on: :create
+  validates :password_confirmation, presence: true, on: :update, if: :password_digest_changed?
+  
+  mount_uploader :avatar, ImageUploader
 end
