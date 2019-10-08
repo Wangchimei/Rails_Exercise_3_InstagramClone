@@ -210,7 +210,7 @@ ja:
     models:
       feed: フィード
       user: ユーザー
-      # comment: コメント
+      comment: コメント
     attributes:
       feed:
         content: 内容
@@ -222,5 +222,5 @@ ja:
         password: パスワード
         password_confirmation: 確認用パスワード
         avatar: プロファイル写真
-    comment:
+      comment:
         content: 内容

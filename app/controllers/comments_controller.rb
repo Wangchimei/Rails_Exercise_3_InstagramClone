@@ -3,10 +3,6 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @feed.comments.create(comment_params)
-    # @comment = @feed.comments
-    #   .create(content: params[:comment][:content],
-    #           feed_id: @feed.id,
-    #           user_id: current_user.id)
     flash[:notice] = "コメントしました"
     redirect_to feed_path(@feed)
   end
