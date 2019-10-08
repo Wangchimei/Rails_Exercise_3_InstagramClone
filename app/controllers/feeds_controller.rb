@@ -3,6 +3,7 @@ before_action :set_feed, only: [:edit, :update, :show, :destroy]
  
   def index
     @feeds = Feed.all.order(created_at: :desc)
+    @favorite = current_user.favorites
   end
  
   def new
@@ -47,6 +48,7 @@ before_action :set_feed, only: [:edit, :update, :show, :destroy]
   end
  
   def show
+    @favorite = current_user.favorites.find_by(feed_id: @feed.id)
   end
 
   def destroy

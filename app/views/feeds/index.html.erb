@@ -1,3 +1,4 @@
+<%=notice%>
 <% @feeds.each do |feed| %>
   <div class="container mt-4">
     <div class="card">
@@ -39,9 +40,15 @@
         <div class="d-flex justify-content-between align-items-center">
           <button type="button" class="btn btn-default px-0">
             <span class="far fa-comments h6" aria-hidden="true"> 12件</span>
-            <i class="ml-3 far fa-heart"></i>
+          <% unless feed.user_id == current_user.id %>
+            <% if current_user.favorites.find_by(feed_id: feed.id)%>
+              <%= link_to '', favorite_path(Favorite.find_by(user_id: current_user.id, feed_id: feed.id).id), method: :delete, 
+              class:"fas fa-heart ml-3", id:"like-mark"%>
+            <% else %>
+              <%= link_to '', favorites_path(feed_id: feed.id), method: :post, class:"far fa-heart ml-3", id:"like-mark"%>
+            <% end %>
+          <% end %>
           </button>
-
           <div>
             <%= link_to '詳細', feed_path(feed), class: "card-link" %>
           </div>
