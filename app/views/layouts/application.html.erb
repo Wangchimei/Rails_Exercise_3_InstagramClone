@@ -13,6 +13,12 @@
 
     <%=render "shared/navbar"%>
     
+    <% flash.each do |key, value| %>
+      <div class="alert alert-info">
+        <%= content_tag(:div, value, class: "#{key}") %>
+      </div>
+    <% end %>
+    
     <div class="main-content">
       <%= yield %>
     </div>

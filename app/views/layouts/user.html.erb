@@ -14,17 +14,11 @@
     
       <%= render "shared/navbar"%>
 
-      <%# if flash[:notice] %>
-        <%# <div class="alert alert-info"> %>
-          <%#= flash[:notice] %>
-        <%# </div> %>
-      <%# end %>
-      
-      <%# flash.each do |key, value| %>
-        <%# <div class="alert alert-info"> %>
-        <%#= content_tag(:div, value, class: "#{key}") %>
-        <%# </div> %>
-      <%# end %>
+      <% flash.each do |key, value| %>
+        <div class="alert alert-info">
+          <%= content_tag(:div, value, class: "#{key}") %>
+        </div>
+      <% end %>
 
       <div class="main-content">
         <%= yield %>
