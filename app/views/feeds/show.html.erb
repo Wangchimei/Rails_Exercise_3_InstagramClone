@@ -28,7 +28,7 @@
     <div class="card-footer">
       <div class="d-flex justify-content-between align-items-center">
         <div type="button" class="btn btn-default px-0">
-          <span class="far fa-comments h6" aria-hidden="true"> 12件</span>
+          <span class="far fa-comments h6 mb-0 ml-1" aria-hidden="true"> <%= @feed.comments.count%>件</span>
           <% unless @feed.user_id == current_user.id %>
             <% if @favorite.present? %>
               <%= link_to '', favorite_path(id: @favorite.id), method: :delete, 
@@ -47,4 +47,17 @@
       </div>
     </div>
   </div>
+  <div class="card mt-3">
+    <div class="card-header">
+      <%= render partial: 'comments/comment_form', comment: @comment, feed: @feed %>
+    </div>
+    <div class="card-footer">
+      <% unless @feed.comments.count.zero? %>
+        <div class="container"> 
+          <%= render @feed.comments %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
+<div class="mb-5"></div>

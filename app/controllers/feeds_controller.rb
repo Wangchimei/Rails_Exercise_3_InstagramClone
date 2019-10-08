@@ -49,6 +49,7 @@ before_action :set_feed, only: [:edit, :update, :show, :destroy]
  
   def show
     @favorite = current_user.favorites.find_by(feed_id: @feed.id)
+    @comment = Comment.new
   end
 
   def destroy

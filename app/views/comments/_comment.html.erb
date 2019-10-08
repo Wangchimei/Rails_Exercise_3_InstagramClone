@@ -1,0 +1,20 @@
+<div class="card-body">
+  <div class="row align-items-center px-1 py-1 my-3">
+    <div class="col-3 col-md-2 col-lg-1 text-center pl-1 pr-0">
+      <%=avatar(comment.user, "rounded-circle")%>
+    </div>
+    <div class="col-3 col-md-2 col-lg-1 text-left pl-0">
+      <p class="mb-0"><%=comment.user.name%></p>
+      <p class="text-muted h7 mb-0"><%= distance_of_time_in_words(comment.created_at, Time.now)%>前</p>
+    </div>
+    <div class="col-7 col-md-7 col-lg-9 text-left text-wrap">
+      <%= comment.content %>
+    </div>
+    <div class="col-1 col-md-1 col-lg-1 text-center px-0">
+      <% if current_user.id == comment.user_id %>
+        <%= link_to '', [comment.feed, comment],
+      method: :delete, data: { confirm: 'コメントを削除しますか？' }, class:"btn fas fa-times" %>
+      <%end%>
+    </div>
+  </div>
+</div>

@@ -38,7 +38,7 @@
       <div class="card-footer">
         <div class="d-flex justify-content-between align-items-center">
           <div type="button" class="btn btn-default px-0">
-            <span class="far fa-comments h6" aria-hidden="true"> 12件</span>
+            <span class="far fa-comments h6" aria-hidden="true"> <%= feed.comments.count%>件</span>
           <% unless feed.user_id == current_user.id %>
             <% if current_user.favorites.find_by(feed_id: feed.id)%>
               <%= link_to '', favorite_path(id: @favorites.find_by(feed_id: feed.id)), method: :delete, 

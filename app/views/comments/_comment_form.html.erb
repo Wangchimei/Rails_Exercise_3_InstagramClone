@@ -1,0 +1,23 @@
+<div class="card-body">
+  <div class="container my-2">
+    <div class="row align-items-center px-1 py-1">
+      <div class="col-3 col-md-2 col-lg-1 text-center">
+        <%=avatar(current_user, "rounded-circle")%>
+      </div>
+      <div class="col-6 col-md-9 col-lg-10 text-center">
+        <%= form_with(model: @comment, local: true, url: feed_comments_path(@feed.id)) do |f| %>
+          <%= f.text_field :content,class:"form-control"%>
+          <%= f.hidden_field :feed_id, value: @feed.id %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+      </div>
+      <div class="col-3 col-md-1 col-lg-1 text-center px-0">
+          <button class="submit-btn">
+            <%= f.submit "コメント", class:"d-none" %>
+            <i class="far fa-paper-plane btn btn-outline-info px-3 py-2"></i>
+          </button>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
+
