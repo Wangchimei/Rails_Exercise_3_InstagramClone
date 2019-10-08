@@ -10,10 +10,7 @@
       <% if logged_in? %>
         <ul class="navbar-nav justify-content-center">
           <li class="nav-item">
-            <%= link_to "投稿を作成", new_feed_path, class: "nav-link #{ "active" if current_page?(new_feed_path)}" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "フィード一覧", feeds_path, class: "nav-link #{ "active" if current_page?(feeds_path)}" %>
+            <%= link_to '新規投稿', new_feed_path, class: "nav-link #{ "active" if current_page?(new_feed_path)}" %>
           </li>
           <li class="nav-item">
             <%= link_to "プロフィール", user_path(current_user.id), class: "nav-link #{ "active" if current_page?(user_path(current_user.id))}" %>
@@ -21,7 +18,7 @@
         </ul>
         <ul class="nav navbar-nav ml-auto justify-content-end">
             <li class="nav-item">
-              <%= link_to "ログアウト", session_path(current_user.id), method: :delete, class: "nav-link" %>
+              <%= link_to "ログアウト", session_path(current_user.id), method: :delete, class: "nav-link"%>
             </li>
         </ul>
       <% end %>
