@@ -35,15 +35,15 @@
                 <%= content_tag(:div, "写真をシェアしよう！", class: "mt-4 ml-4 text-muted h6-5")%> 
               <% end %>
             </div>
-            <div class="tab-pane fade text-center" id="nav-likes" role="tabpanel" aria-labelledby="nav-likes-tab">
-              <%# if @user.feeds.present? %>
-                <%# @user.feeds.reverse_each do |feed| %>
-                  <%# thumb = feed.image.url :thumb%>
-                  <%#=image_tag(thumb ,class:"col-3 px-0 pt-1")%>
-                <%# end %>
-                <%# else %>
+            <div class="tab-pane fade text-left" id="nav-likes" role="tabpanel" aria-labelledby="nav-likes-tab">
+              <% if @user.favorite_feeds.present? %>
+                <% @user.favorite_feeds.reverse_each do |feed| %>
+                  <% thumb = feed.image.url :thumb%>
+                  <%=image_tag(thumb ,class:"col-3 px-0 pt-1")%>
+                <% end %>
+              <% else %>
                 <%= content_tag(:div, "現在お気に入りに保存されたフィードはありません。", class: "mt-4 ml-4 text-muted h6-5")%> 
-              <%# end %>
+              <% end %>
             </div>
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
               <table class="table table-borderless mt-3">
@@ -59,6 +59,10 @@
                   <tr>
                     <th scope="row">投稿数</th>
                     <td><%= @user.feeds.count%>件</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">お気に入り数</th>
+                    <td><%= @user.favorite_feeds.count%>件</td>
                   </tr>
                   <tr>
                     <th scope="row">コメント数</th>

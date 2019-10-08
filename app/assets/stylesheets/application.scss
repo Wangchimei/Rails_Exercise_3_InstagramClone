@@ -137,12 +137,16 @@ body {
   height: 50px;
 }
 
-.nav-pills .nav-link {
-  background-color: #F0EEEE;
-  border-radius: 0;
-
+.like-link {
+  text-decoration: none;
+  color:#FF5965;
+  font-size: 1.4rem;
 }
 
+.like-link:hover {
+  text-decoration: none;
+  color:#e60f1d;
+}
 
 //footer
 .site-wrapper {
