@@ -22,6 +22,7 @@
               <a class="nav-item nav-link active" id="nav-feed-tab" data-toggle="tab" href="#nav-feed" role="tab" aria-controls="nav-feed" aria-selected="true"><i class="far fa-images"></i> 投稿</a>
               <a class="nav-item nav-link" id="nav-likes-tab" data-toggle="tab" href="#nav-likes" role="tab" aria-controls="nav-likes" aria-selected="false"><i class="far fa-heart"></i> お気に入り</a>
               <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="far fa-user"></i> プロファイル</a>
+
             </div>
           </nav>
           <div class="tab-content row ml-1" id="nav-tabContent">
@@ -39,7 +40,7 @@
               <% if @user.favorite_feeds.present? %>
                 <% @user.favorite_feeds.reverse_each do |feed| %>
                   <% thumb = feed.image.url :thumb%>
-                  <%=image_tag(thumb ,class:"col-3 px-0 pt-1")%>
+                    <%=image_tag(thumb ,class:"col-sm-2 col-md-2 col-3 px-0 pt-1")%>
                 <% end %>
               <% else %>
                 <%= content_tag(:div, "現在お気に入りに保存されたフィードはありません。", class: "mt-4 ml-4 text-muted h6-5")%> 
