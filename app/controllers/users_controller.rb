@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :show]
-  skip_before_action :login_required, only: [:coverpage]
+  skip_before_action :login_required, only: [:coverpage, :new, :create]
   layout 'coverpage', only: [:coverpage, :new, :create]
 
   def coverpage;end
