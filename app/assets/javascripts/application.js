@@ -1,9 +1,11 @@
+//= require jquery
+//= require jquery.turbolinks
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
 //= require_tree .
 
 $(function () {
@@ -30,6 +32,7 @@ $(function () {
   });
 });
 
+
 $(function () {
   $('#profile').on('change', function (e) {
     // for one image
@@ -52,6 +55,7 @@ $(function () {
     fileReader.readAsDataURL(file);
   });
 });
+
 
 // Favorites
 // $(function () {

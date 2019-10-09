@@ -21,7 +21,7 @@ before_action :set_feed, only: [:edit, :update, :show, :destroy]
       render :new
     else
       if @feed.save
-        FeedMailer.feed_mailer(@feed).deliver
+        FeedMailer.feed_mail(@feed).deliver
         redirect_to feeds_path
         flash[:notice] = "フィードが投稿されました"
       else
@@ -31,7 +31,10 @@ before_action :set_feed, only: [:edit, :update, :show, :destroy]
   end
  
   def edit
- 
+    unless @feed.user == current_user
+      flash[:error] = "権限がありません"
+      redirect_to feeds_path
+    end
   end
  
   def update
