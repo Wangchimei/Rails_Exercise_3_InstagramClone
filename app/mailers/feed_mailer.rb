@@ -1,5 +1,4 @@
 class FeedMailer < ApplicationMailer
-  default from: "Instashot@example.com"
 
   def feed_email
     @feed = feed
