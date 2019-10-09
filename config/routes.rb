@@ -11,9 +11,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create, :destroy]
   end
 
-  resources :users, only: [:new, :create, :edit, :update, :show]
+  resources :users
+  
   resources :sessions, only: [:new, :create, :destroy]
-  resources :favorites, only: [:create, :destroy]
+  resources :favorites, only: [:create, :show, :destroy]
   
   root to: 'users#coverpage'
 end

@@ -20,7 +20,7 @@ before_action :set_feed, only: [:edit, :update, :show, :destroy]
       render :new
     else
       if @feed.save
-        # FeedMailer.feed_mail(@feed).deliver
+        FeedMailer.feed_mail(@feed).deliver
         redirect_to feeds_path
         flash[:notice] = "フィードが投稿されました"
       else

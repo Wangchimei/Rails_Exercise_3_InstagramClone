@@ -15,6 +15,9 @@
           <li class="nav-item">
             <%= link_to "プロフィール", user_path(current_user.id), class: "nav-link #{ "active" if current_page?(user_path(current_user.id))}" %>
           </li>
+          <li class="nav-item">
+            <%= link_to "お気に入り一覧", favorite_path(current_user.id), class: "nav-link #{ "active" if current_page?(favorite_path(current_user.id))}" %>
+          </li>
         </ul>
         <ul class="nav navbar-nav ml-auto justify-content-end">
             <li class="nav-item">

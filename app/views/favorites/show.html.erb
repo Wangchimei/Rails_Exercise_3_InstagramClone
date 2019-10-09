@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card mt-5">
+        <div class="card-body">
+          <div class="row ml-1">
+            <div class="text-left">
+              <% if @user.favorite_feeds.present? %>
+                <% @user.favorite_feeds.reverse_each do |feed| %>
+                  <% thumb = feed.image.url :thumb%>
+                  <%=image_tag(thumb ,class:"col-3 px-0 pt-1")%>
+                <% end %>
+              <% else %>
+                <%= content_tag(:div, "現在お気に入りに保存されたフィードはありません。", class: "mt-4 ml-4 text-muted h6-5")%> 
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

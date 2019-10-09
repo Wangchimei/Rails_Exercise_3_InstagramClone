@@ -1,5 +1,5 @@
 //= require jquery
-//= require jquery.turbolinks
+
 //= require rails-ujs
 //= require activestorage
 //= require jquery3
@@ -18,6 +18,7 @@ $(function () {
     fileReader.onload = function () {
       // Data URIを取得
       var dataUri = this.result;
+      $("#uploaded_img").empty();
       $preview.empty();
       $preview.append($('<img>').attr({
         "src": dataUri,
@@ -26,7 +27,6 @@ $(function () {
       }));
     };
 
-    $("#uploaded_img").empty();
     // read file via Data URI
     fileReader.readAsDataURL(file);
   });
@@ -38,18 +38,18 @@ $(function () {
     // for one image
     var file = e.target.files[0];
     var $preview = $("#avatar_field");
-
+    
     var fileReader = new FileReader();
     fileReader.onload = function () {
       // Data URIを取得
       var dataUri = this.result;
+      $("#imgProfile").empty();
       $preview.empty();
       $preview.append($('<img>').attr({
         "src": dataUri,
         "class": "preview image_box",
       }));
     };
-    $("#imgProfile").empty();
     $('#btnChangePicture').removeClass('d-none');
     // read file via Data URI
     fileReader.readAsDataURL(file);
