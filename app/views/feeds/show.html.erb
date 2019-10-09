@@ -27,12 +27,12 @@
     <%end%>
     <div class="card-footer">
       <div class="d-flex justify-content-between align-items-center">
-        <div type="button" class="btn btn-default px-0">
+        <div class="btn btn-default px-0">
           <span class="far fa-comments h6 mb-0 ml-1" aria-hidden="true"> <%= @feed.comments.count%>件</span>
           <% unless @feed.user_id == current_user.id %>
             <% if @favorite.present? %>
               <%= link_to '', favorite_path(id: @favorite.id), method: :delete, 
-              class:"fas fa-heart ml-3 pt-1 like-link", id:"like-mark"%>
+              class:"fas fa-heart ml-4 pt-1 like-link", id:"like-mark"%>
             <% else %>
               <%= link_to '', favorites_path(feed_id: @feed.id), method: :post, class:"far fa-heart ml-3 pt-1 like-link", id:"like-mark"%>
             <% end %>
