@@ -38,7 +38,6 @@ class UsersController < ApplicationController
 
   def show
     unless current_user == @user
-    if current_user != @user
       flash[:error] = "権限がありません"
       redirect_to user_path(current_user) and return
     end
