@@ -1,10 +1,19 @@
 class CommentsController < ApplicationController
-  before_action  :set_feed, only: [:create, :destroy]
+  before_action  :set_feed, only: [:new, :create, :destroy]
+
+  def new
+    @comment = @feed.comments.new(comment_params)
+  end
 
   def create
-    @comment = @feed.comments.create(comment_params)
-    flash[:notice] = "コメントしました"
-    redirect_to feed_path(@feed)
+    @comment = @feed.comments.new(comment_params)
+    if @comment.save
+      redirect_to feed_path(@feed)
+      flash[:notice] = "コメントしました"
+    else
+      redirect_to feed_path(@feed)
+      flash[:notice] = "コメントを入力してください"
+    end
   end
 
   def destroy

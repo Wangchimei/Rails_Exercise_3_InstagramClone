@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   
   resources :feeds do
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:new, :create, :destroy]
   end
 
   resources :users, only: [:new, :create, :edit, :update, :show]
