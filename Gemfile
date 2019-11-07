@@ -31,17 +31,17 @@ gem 'mini_magick'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'jquery-turbolinks'
 gem 'dotenv-rails' # 開発環境で環境変数を操作するのに必要
-gem 'unicorn', '~> 5.4.1' # アプリケーションサーバのunicorn
+gem 'unicorn', '~> 5.1' # アプリケーションサーバのunicorn
 gem 'mini_racer', platforms: :ruby # デプロイ時に必要
 
 group :development, :test do
   gem 'capistrano', '3.6.0' # capistranoのツール一式
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  gem 'ed25519'
-  gem 'bcrypt_pbkdf'
   gem 'capistrano-rbenv'
   gem 'capistrano3-unicorn'
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'better_errors'
