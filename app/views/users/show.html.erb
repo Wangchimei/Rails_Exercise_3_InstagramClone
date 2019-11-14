@@ -33,7 +33,7 @@
                   <%=image_tag(thumb ,class:"col-3 px-0 pt-1")%>
                 <% end %>
               <% else %>
-                <%= content_tag(:div, "写真をシェアしよう！", class: "mt-4 ml-4 text-muted h6-5")%> 
+                <%= content_tag(:div, "写真をシェアしよう！", class: "mt-4 ml-4 text-muted h6-5")%>
               <% end %>
             </div>
             <div class="tab-pane fade text-left" id="nav-likes" role="tabpanel" aria-labelledby="nav-likes-tab">
@@ -43,9 +43,10 @@
                     <%=image_tag(thumb ,class:"col-sm-2 col-md-2 col-3 px-0 pt-1")%>
                 <% end %>
               <% else %>
-                <%= content_tag(:div, "現在お気に入りに保存されたフィードはありません。", class: "mt-4 ml-4 text-muted h6-5")%> 
+                <%= content_tag(:div, "現在お気に入りに保存されたフィードはありません。", class: "mt-4 ml-4 text-muted h6-5")%>
               <% end %>
             </div>
+
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
               <table class="table table-borderless mt-3">
                 <tbody>
